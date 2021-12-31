@@ -21,10 +21,10 @@
 вызов new GooSearchResult("http://apple.in.mars").parseDomain() возвращает apple.in.mars.
  */
 
-class GooSearchResult{
+class GooSearchResult03 {
     private final String url;
 
-    public GooSearchResult(String url) {
+    public GooSearchResult03(String url) {
         this.url = url;
     }
 
@@ -48,12 +48,12 @@ class GooSearchResult{
 class Tasck03 { //class GooSearchResultTest
     public static void main(String[] args) {
         //test.com
-        System.out.println(new GooSearchResult("https://test.com").parseDomain());
+        System.out.println(new GooSearchResult03("https://test.com").parseDomain());
 
         //apple.in.mars
-        System.out.println(new GooSearchResult("http://apple.in.mars").parseDomain());
+        System.out.println(new GooSearchResult03("http://apple.in.mars").parseDomain());
 
         //mountain.alps.com
-        System.out.println(new GooSearchResult("http://mountain.alps.com/resorts").parseDomain());
+        System.out.println(new GooSearchResult03("http://mountain.alps.com/resorts").parseDomain());
     }
 }
