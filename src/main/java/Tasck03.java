@@ -21,6 +21,8 @@
 вызов new GooSearchResult("http://apple.in.mars").parseDomain() возвращает apple.in.mars.
  */
 
+import java.util.Arrays;
+
 class GooSearchResult03 {
     private final String url;
 
@@ -32,16 +34,36 @@ class GooSearchResult03 {
         return url;
     }
 
+//    public String parseDomain() {
+//        String res = url.replace("https://", "");
+//        String resu = res.replace("http://", "");
+//        char[] chArray = resu.toCharArray();
+//        StringBuilder result = new StringBuilder();
+//        for (char a: chArray) {
+//            if (a == '/') {break;}
+//            result.append(a);
+//        }
+//        return result.toString();
+//    }
+
     public String parseDomain() {
-        String res = url.replace("https://", "");
-        String resu = res.replace("http://", "");
-        char[] chArray = resu.toCharArray();
-        StringBuilder result = new StringBuilder();
-        for (char a: chArray) {
-            if (a == '/') {break;}
-            result.append(a);
+        String test1 = "";
+        if (url.startsWith("https://")) {
+            test1 = url.substring(8);
         }
-        return result.toString();
+        if (url.startsWith("http://")) {
+            test1 = url.substring(7);
+        }
+        char[] result = test1.toCharArray();
+        StringBuilder domain = new StringBuilder();
+        for (int i = 0; i < result.length; i++) {
+            if (result[i] != '/') {
+                domain.append(result[i]);
+            } else {
+                break;
+            }
+        }
+        return domain.toString();
     }
 }
 
