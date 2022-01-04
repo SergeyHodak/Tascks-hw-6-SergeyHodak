@@ -18,7 +18,7 @@ class WordSplitter05 {
     public String[] split(String phrase) {
 
         String result = new String(phrase);
-        for (int i = 0; i < (result.length())/2; i++) {
+        for (int i = 0; i < 3; i++) {
             result = result.replace("  ", " ");
         }
         result = result.toLowerCase();

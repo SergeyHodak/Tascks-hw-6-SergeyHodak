@@ -19,23 +19,23 @@
 выполнение кода new WordFreqCounter().countFreq("Hello World", "java") возвращает 0f.
  */
 
-class WordFreqCounter {
+class WordFreqCounter08 {
     public float countFreq(String phrase, String word) {
         String result = new String(phrase.toLowerCase());
         String[] a = result.split(" ");
-        int b = 0;
+        float b = 0;
         for (String slovo: a) {
             if (slovo.equals(word.toLowerCase())) {
                 b++;
             }
         }
-        return (float) b / a.length;
+        return b / a.length;
     }
 }
 
 class Tasck08 { //class WordFreqCounterTest
     public static void main(String[] args) {
-        WordFreqCounter freqCounter = new WordFreqCounter();
+        WordFreqCounter08 freqCounter = new WordFreqCounter08();
 
         //0.5
         System.out.println(freqCounter.countFreq("Hello Java", "java"));
