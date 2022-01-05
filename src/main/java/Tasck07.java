@@ -13,14 +13,28 @@
 вызов new DoubleSpaceCleaner().clean(" Hello World ") возвращает Hello World.
  */
 
+//class DoubleSpaceCleaner07 { // мое первое рабочее решение
+//    public String clean(String phrase) {
+//        String result = new String(phrase);
+//        for (int i = 0; i < (result.length())/2; i++) {
+//            result = result.replace("  ", " ");
+//        }
+//        result = result.trim();
+//        return result;
+//    }
+//}
+
+//class DoubleSpaceCleaner07 {  //не верное решение спрашивающего человека
+//    public String clean(String phrase){
+//        phrase = phrase.replaceAll("  "," "); //-заменила двойные на однойные пробелы
+//        String phrase2 = phrase.trim(); //-обрезала пробелы по краям
+//        return phrase2;
+//    }
+//}
+
 class DoubleSpaceCleaner07 {
-    public String clean(String phrase) {
-        String result = new String(phrase);
-        for (int i = 0; i < (result.length())/2; i++) {
-            result = result.replace("  ", " ");
-        }
-        result = result.trim();
-        return result;
+    public String clean(String phrase){
+        return phrase.replaceAll("\\s+", " ").trim();
     }
 }
 
