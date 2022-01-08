@@ -11,27 +11,56 @@
 вызов new UniqueCharCounter().count("Java") возвращает 3.
  */
 
-class UniqueCharCounter12 {
+//class UniqueCharCounter12 { // мое первое решение, модернизировано
+//    public int count(String phrase) {
+//        char[] text = phrase.toCharArray();
+//        char[] test = new char[phrase.length()];
+//        int i = 0;
+//        int c = 0;
+//        for (char a: text) {
+//            if (!String.valueOf(test).contains(String.valueOf(a))) {
+//                test[i] = a;
+//                i++;
+//            } else {
+//                c++;
+//                i++;
+//            }
+//        }
+//        return (test.length)-c;
+//    }
+//}
+
+//class UniqueCharCounter12 { //Anna Goy 08.01.2022
+//    public int count(String phrase) {
+//        phrase = phrase.toLowerCase();
+//        int count = 0;
+//        //String[] wordArray = phrase.split(" ");
+//        for (int i = 0; i < phrase.length(); i++) {  //пробежка посимволам
+//            //for (int k = 0; k < wordArray.length; k++) { //не нужна еще одна пробежка по символам
+//            if (phrase[i] != phrase[k]) { //иф нужно переделать
+//                count++;
+//            }
+//            //return count;
+//            //}
+//            //return count;
+//        }
+//        return count;
+//    }
+//}
+
+
+class UniqueCharCounter12 { //Anna Goy 08.01.2022
     public int count(String phrase) {
-        char[] text = phrase.toCharArray();
-        char[] test = new char[phrase.length()];
-        int i = 0;
-        for (char a: text) {
-            if (!String.valueOf(test).contains(String.valueOf(a))) {
-                test[i] = a;
-                i++;
-            } else {
-                test[i] = '\u0000';
-                i++;
+        char[] characters = phrase.toCharArray();
+        int countOfUniqueChars = phrase.length();
+        for (int i = 0; i < characters.length; i++) {
+            //System.out.println(i + " " + phrase.indexOf(characters[i]) + " " + characters[i]);
+            //то есть иф сравнивает индекс первого вхождения символа в строку с шагом
+            if (i != phrase.indexOf(characters[i])) {
+                countOfUniqueChars--;
             }
         }
-
-        int c = 0;
-        for (char value : test) {
-            if (value == '\u0000')
-                c++;
-        }
-        return (test.length)-c;
+        return countOfUniqueChars;
     }
 }
 
